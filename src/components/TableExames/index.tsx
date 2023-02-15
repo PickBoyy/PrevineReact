@@ -5,6 +5,7 @@ import { IExames } from "../../model/Exames";
 import { IPaciente } from "../../model/Paciente";
 import { ListCondition } from "../ListCondition";
 
+
 type MyProps = {
   paciente: IPaciente;
 };
@@ -46,6 +47,8 @@ export const TableExames = (props: MyProps) => {
 
 const styles = StyleSheet.create({
   container: {
+    shadowColor:'#000000',
+    elevation:5,
     alignItems: "center",
     backgroundColor: "#DADADA",
     borderRadius: 5,
@@ -57,7 +60,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingStart: 15,
     paddingEnd: 15,
-    flex:0.6,
+    height:370,
+    // flex:0.7,
   },
   title: {
     padding: 7,

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -25,9 +25,15 @@ export const Alert = (props: MyProps) => {
     (exame: IExames) => exame.Resultado === undefined
   );
 
+  const [show, setShow] = useState(true);
+
+  if (!show) {
+    return null; // Retorna null para não exibir o componente
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity activeOpacity={0.9} style={styles.btnClose}>
+      <TouchableOpacity activeOpacity={0.9} style={styles.btnClose} onPress={() => setShow(false)}>
         <AntDesign name="close" size={26} color="black" />
       </TouchableOpacity>
       {verrify ? (
@@ -45,8 +51,7 @@ export const Alert = (props: MyProps) => {
       ) : (
         <View style={styles.alertChecked}>
           <Text style={styles.text}>
-            Parabéns! Sua saúde está em dia! Vá curtir sua vida lembranddo
-            sempre de manter hábitos saúdaveis.
+            Parabéns! Sua saúde está em dia! Vá curtir sua vida lembrando sempre de manter hábitos saudáveis.
           </Text>
         </View>
       )}

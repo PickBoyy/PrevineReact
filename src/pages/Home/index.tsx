@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {View,Text,StyleSheet} from 'react-native'
+import {View,Text,StyleSheet,SectionList} from 'react-native'
 import { Client } from '../../components/ShowClient'
 import { Header } from '../../components/Header'
 import { Alert } from '../../components/Alert'
@@ -13,13 +13,10 @@ export const  Home = () => {
 
   return (
     <View style={styles.container}>
-        {/* <Header/> */}
-
+        <Header/>
         <Client paciente={paciente} />
-
         <Alert Paciente={paciente}/>
-        
-        <TableExames  paciente={paciente}/>
+      <TableExames  paciente={paciente}/>
     </View>
   )
 }
