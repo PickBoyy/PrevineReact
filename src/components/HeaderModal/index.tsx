@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center',
     padding:10,
+    paddingStart:45
   },
 
   title:{
@@ -38,7 +39,9 @@ const styles = StyleSheet.create({
   },
 
   placeIcon:{
-    paddingEnd:0,
-    paddingTop:10,
+    paddingEnd:20,
+    paddingTop:0,
+    justifyContent:'center',
+    alignItems: 'center',
   },
 });

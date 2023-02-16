@@ -14,34 +14,27 @@ export function ShowData() {
     <View style={styles.container}>
 
         <View style={styles.btnsTop}>
-            <View style={styles.id}>
-                <TouchableOpacity style={{height:100}} onPress={() => setShow('id')}>
-                    <Text>Identificação</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.pathological}>
-                <TouchableOpacity style={{height:100}} onPress={() => setShow('pathological')}>
+            <TouchableOpacity onPress={() => setShow('id')} style={styles.id}>
+                    <Text>Identificação</Text>    
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => setShow('pathological')} style={styles.pathological}>
                     <Text>Antecedentes Patológicos</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.historic}>
-                <TouchableOpacity style={{height:100}} onPress={() => setShow('historic')}>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => setShow('historic')} style={styles.historic}>
                     <Text>Histórico Familiar</Text>
-                </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
         </View>
 
         <View style={styles.btnsBottom}>
-            <View style={styles.medicines}>
-                <TouchableOpacity style={{height:100}} onPress={() => setShow('medicines')}>
+            <TouchableOpacity  onPress={() => setShow('medicines')}style={styles.medicines}>
                     <Text>Medicamentos</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.habits}>
-                <TouchableOpacity style={{height:100}} onPress={() => setShow('habits')}>
+            </TouchableOpacity>
+            
+            <TouchableOpacity onPress={() => setShow('habits')}style={styles.habits}>
                     <Text>Hábitos de Vida</Text>
-                </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
         </View>
     {show === 'id' && (<ModalId/>)}
     {show === 'pathological' && (<ModalPathological/>)}
@@ -78,7 +71,7 @@ const styles = StyleSheet.create({
         borderColor:'#000000',
         paddingStart:2,
         paddingEnd:2,
-        paddingTop:5,
+        paddingTop:7,
         borderTopStartRadius:10,
         borderTopEndRadius:10,
         
@@ -93,7 +86,7 @@ const styles = StyleSheet.create({
         marginEnd:2,
         paddingStart:2,
         paddingEnd:2,
-        paddingTop:5,
+        paddingTop:7,
         borderTopStartRadius:10,
         borderTopEndRadius:10,
     },
@@ -103,7 +96,7 @@ const styles = StyleSheet.create({
         borderColor:'#000000',
         paddingStart:2,
         paddingEnd:2,
-        paddingTop:5,
+        paddingTop:7,
         borderTopStartRadius:10,
         borderTopEndRadius:10,
     },

@@ -15,7 +15,9 @@ export const ListCondition = (props:MyProps) => {
         <TouchableOpacity style={styles.condition}>
         <Text style={styles.title}>{props.exames.Exame}</Text>
         </TouchableOpacity>
-        <View style={{width:1,backgroundColor:'black'}}></View>
+
+        <View style={{width:1,backgroundColor:'black',shadowColor:'#000000', elevation:2,}}></View>
+
         <TouchableOpacity style={styles.detailsExams}>
 
         <View style={props.exames.Resultado === undefined ? styles.unCheck : styles.checke}>
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
         marginBottom:5,
         flexDirection:'row',
         justifyContent:'center',
+        
     },
     condition:{
         width:177,
@@ -49,6 +52,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         paddingBottom:15,
         paddingTop:15,
+        shadowColor:'#000000',
+        elevation:2,
     },
     title:{
         fontSize:16,
@@ -61,6 +66,7 @@ const styles = StyleSheet.create({
         borderColor:'#000000',
         borderRadius:20,
         marginStart:12,
+        
     },
     unCheck:{
         backgroundColor:'#43DB2A',
@@ -78,7 +84,8 @@ const styles = StyleSheet.create({
         paddingStart:10,
         paddingTop:16,
         paddingBottom:16,
-        borderRadius:11
+        borderRadius:11,
+        
     
     },
     noResult:{
@@ -101,6 +108,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         borderTopEndRadius:15,
         borderBottomEndRadius:15,
+        shadowColor:'#000000',
+        elevation:2,
     }
 
 })

@@ -47,7 +47,6 @@ export const TableExames = (props: MyProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    shadowColor:'#000000',
     elevation:5,
     alignItems: "center",
     backgroundColor: "#DADADA",
@@ -61,13 +60,11 @@ const styles = StyleSheet.create({
     paddingStart: 15,
     paddingEnd: 15,
     height:370,
-    // flex:0.7,
   },
   title: {
     padding: 7,
     fontSize: 18,
     fontWeight: "bold",
-    fontFamily: "",
     marginTop:10,
     marginBottom: 20,
   },
@@ -76,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 5,
     borderRadius: 15,
-    width: 355,
+    width: 350,
   },
   textCondition: {
 
@@ -85,7 +82,7 @@ const styles = StyleSheet.create({
   condition: {
     backgroundColor:'#FAFAFA',
     alignItems:'center',
-    width:178,
+    width:175,
     borderTopStartRadius:15,
     borderBottomStartRadius:15
   },
@@ -97,11 +94,11 @@ const styles = StyleSheet.create({
   result: {
     backgroundColor: "#00A6ED",
     borderRadius: 15,
-    paddingStart: 31,
-    paddingEnd: 31,
+    paddingStart: 29,
+    paddingEnd: 29,
     paddingBottom:0,
     paddingTop: 0,
-    marginStart:10,
+    marginStart:14,
     marginEnd: 0,
   },
   row: {
