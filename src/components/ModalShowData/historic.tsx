@@ -10,8 +10,8 @@ export function ModalHistoric() {
     <View style={styles.container}>
       <HeaderModal title='Histórico Familiar'/>
       <View>
-        
-      </View>
+      <Text>Em desenvolvimento...</Text>
+     </View>
     </View>
   );
 }

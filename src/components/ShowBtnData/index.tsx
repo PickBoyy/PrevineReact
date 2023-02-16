@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text,TouchableOpacity,StyleSheet} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from 'react';
+import { View, Text,TouchableOpacity,StyleSheet, } from 'react-native';
 import { ModalHabits } from '../ModalShowData/habits';
 import { ModalHistoric } from '../ModalShowData/historic';
 import { ModalId } from '../ModalShowData/Id';
@@ -10,6 +11,32 @@ import { ModalPathological } from '../ModalShowData/pathological';
 
 export function ShowData() {
     const[show,setShow] = useState('id')
+    
+    useEffect(() => {
+        async function getStoredShow() {
+          try {
+            const storedShow = await AsyncStorage.getItem('show');
+            if (storedShow !== null) {
+              setShow(storedShow);
+            }
+          } catch (e) {
+            console.log(e);
+          }
+        }
+        getStoredShow();
+      }, []);
+    
+      useEffect(() => {
+        async function storeShow() {
+          try {
+            await AsyncStorage.setItem('show', show);
+          } catch (e) {
+            console.log(e);
+          }
+        }
+        storeShow();
+      }, [show]);
+      
   return (
     <View style={styles.container}>
 

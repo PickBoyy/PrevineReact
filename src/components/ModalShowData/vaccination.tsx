@@ -4,12 +4,12 @@ import { AppContext } from '../../hooks/context';
 import { HeaderModal } from '../HeaderModal';
 
 
-export function ModalPathological() {
+export function ModalHabits() {
   const {paciente} = useContext(AppContext)
   return (
     <View style={styles.container}>
-      <HeaderModal title='Antecedentes Patológicos'/>
-      <View>
+      <HeaderModal title='Vacinação'/>
+     <View>
       <Text>Em desenvolvimento...</Text>
      </View>
     </View>
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         shadowColor:'#000000',
         elevation:5,
         zIndex:1
+      
     },
     data:{
       paddingBottom:10,

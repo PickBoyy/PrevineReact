@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,13 +11,15 @@ import { AntDesign } from "@expo/vector-icons";
 import { IExames } from "../../model/Exames";
 import { AppContext } from "../../hooks/context";
 import { ListPending } from "../ListPending";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type MyProps = {
   Paciente: IPaciente;
 };
+
 export const Alert = (props: MyProps) => {
   const { exames } = useContext(AppContext);
-  
+
   const verrify = exames.some(
     (exame: IExames) => exame.Resultado === undefined
   );
@@ -25,15 +27,33 @@ export const Alert = (props: MyProps) => {
     (exame: IExames) => exame.Resultado === undefined
   );
 
-  const [show, setShow] = useState(true);
+  const [showAlert, setShowAlert] = useState(true);
 
-  if (!show) {
-    return null; // Retorna null para não exibir o componente
+  useEffect(() => {
+    const getAlertState = async () => {
+      const value = await AsyncStorage.getItem("showAlert");
+      setShowAlert(value === null ? true : value === "true");
+    };
+
+    getAlertState();
+  }, []);
+
+  const closeAlert = () => {
+    setShowAlert(false);
+    AsyncStorage.setItem("showAlert", "false");
+  };
+
+  if (!showAlert) {
+    return null;
   }
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity activeOpacity={0.9} style={styles.btnClose} onPress={() => setShow(false)}>
+      <TouchableOpacity
+        activeOpacity={0.9}
+        style={styles.btnClose}
+        onPress={closeAlert}
+      >
         <AntDesign name="close" size={26} color="black" />
       </TouchableOpacity>
       {verrify ? (

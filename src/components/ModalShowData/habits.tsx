@@ -9,7 +9,9 @@ export function ModalHabits() {
   return (
     <View style={styles.container}>
       <HeaderModal title='Hábitos de Vida'/>
-     
+     <View>
+      <Text>Em desenvolvimento...</Text>
+     </View>
     </View>
   );
 }

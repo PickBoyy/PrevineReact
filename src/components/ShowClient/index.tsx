@@ -27,7 +27,7 @@ export const Client = (props: MyProps) => {
           <Entypo name="magnifying-glass" size={26} color="#111111" />
         </View>
       </TouchableOpacity>
-      {showList && <PacienteList onClose={() => setShowList(false)} />}
+      {showList && <PacienteList onClose={() => setShowList(!true)} />}
     </View>
   );
 };

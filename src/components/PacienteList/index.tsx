@@ -7,10 +7,10 @@ type PacienteListProps = {
 };
 
 const pacientes: IPaciente[] = [ // exemplo de lista de pacientes (substitua pelos seus dados)
-  { Nome: 'Luiz', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Kleber', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Raul', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Pedro', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
+  { Nome: 'Luiz Pereira Nune', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
+  { Nome: 'Kleber Rocha Silva', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
+  { Nome: 'Raul dos Santos Souza', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
+  { Nome: 'Pedro Antunes Magalhães', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
 ];
 
 export const PacienteList = (props: PacienteListProps) => {
