@@ -1,16 +1,20 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Text,TouchableOpacity,StyleSheet, } from 'react-native';
+import { AppContext } from '../../hooks/context';
+import { BtnSetData } from '../BtnsSetScreen/setData';
+import { ModalAllergies } from '../ModalShowData/allergies';
 import { ModalHabits } from '../ModalShowData/habits';
 import { ModalHistoric } from '../ModalShowData/historic';
 import { ModalId } from '../ModalShowData/Id';
 import { ModalMedicines } from '../ModalShowData/medicines';
 import { ModalPathological } from '../ModalShowData/pathological';
+import { ModalVaccination } from '../ModalShowData/vaccination';
 
 
 
 export function ShowData() {
-    const[show,setShow] = useState('id')
+  const {show,setShow} = useContext(AppContext)
     
     useEffect(() => {
         async function getStoredShow() {
@@ -40,32 +44,24 @@ export function ShowData() {
   return (
     <View style={styles.container}>
 
-        <View style={styles.btnsTop}>
-            <TouchableOpacity onPress={() => setShow('id')} style={styles.id}>
-                    <Text>Identificação</Text>    
-            </TouchableOpacity>
+        <View style={styles.placeBtn}>
+            <BtnSetData title='Identificção' typeShow='id'/>
+            <BtnSetData title='Medicamentos' typeShow='medicines'/>
+            <BtnSetData title='Hábitos de Vida' typeShow='habits'/>
+            <BtnSetData title='Vacinação' typeShow='vaccination'/>
+            <BtnSetData title='Alergias' typeShow='allergies'/>
+            <BtnSetData title='Histórico Familiar' typeShow='historic'/>
+           
+    </View>
+    <View style={styles.btnBottom}>
+      <BtnSetData title='Antecedentes Patológicos' typeShow='pathological'/>  
+    </View>
 
-            <TouchableOpacity onPress={() => setShow('pathological')} style={styles.pathological}>
-                    <Text>Antecedentes Patológicos</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setShow('historic')} style={styles.historic}>
-                    <Text>Histórico Familiar</Text>
-            </TouchableOpacity>
-        </View>
-
-        <View style={styles.btnsBottom}>
-            <TouchableOpacity  onPress={() => setShow('medicines')}style={styles.medicines}>
-                    <Text>Medicamentos</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity onPress={() => setShow('habits')}style={styles.habits}>
-                    <Text>Hábitos de Vida</Text>
-            </TouchableOpacity>
-        </View>
     {show === 'id' && (<ModalId/>)}
     {show === 'pathological' && (<ModalPathological/>)}
     {show === 'historic' && (<ModalHistoric/>)}
+    {show === 'vaccination' && (<ModalVaccination/>)}
+    {show === 'allergies' && (<ModalAllergies/>)}
     {show === 'medicines' && (<ModalMedicines/>)}
     {show === 'habits' && (<ModalHabits/>)}
     </View>
@@ -81,16 +77,13 @@ const styles = StyleSheet.create({
     texts:{
         fontWeight:'900',
     },
-    btnsTop:{
+    placeBtn:{
         flexDirection:'row',
-        height:105,
+        flexWrap:'wrap',
+        justifyContent:'space-between'
     },
-    btnsBottom:{
-        flexDirection:'row',
-        zIndex:1,
-        height:50,
-        marginTop:-70,
-        marginStart:35,
+    btnBottom:{
+      alignItems:'center'
     },
     id:{
         backgroundColor:'#D9D9D9',

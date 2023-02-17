@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { View,StyleSheet,Text,TouchableOpacity } from 'react-native';
 import { AppContext } from '../../hooks/context';
 import { HeaderModal } from '../HeaderModal';
+import { FontAwesome } from '@expo/vector-icons';
 
 
 export function ModalHistoric() {
@@ -10,7 +11,17 @@ export function ModalHistoric() {
     <View style={styles.container}>
       <HeaderModal title='Histórico Familiar'/>
       <View>
-      <Text>Em desenvolvimento...</Text>
+        <Text>Acidente Vacular prévio: Não</Text>
+        <Text>Inclui:</Text>
+      </View>
+        {/* aqui vai ficar o map do array de historico familiar */}
+      <View style={styles.placeData}>
+      <View>
+        <FontAwesome name="circle" size={9} color="black" />
+      </View>
+      <View>
+        <Text style={styles.data}></Text>
+      </View>
      </View>
     </View>
   );
@@ -19,7 +30,7 @@ export function ModalHistoric() {
 const styles = StyleSheet.create({
     container:{
         backgroundColor:'#E6E6E6',
-        marginTop:-10,
+        marginTop:5,
         marginStart:1,
         marginEnd:0.5,
         paddingEnd:3,
@@ -31,10 +42,13 @@ const styles = StyleSheet.create({
       
     },
     data:{
-      paddingBottom:10,
+      paddingBottom:5,
       paddingStart:15,
       fontWeight:'500',
       fontSize:16
+    },
+    placeData:{
+      
     }
    
 })

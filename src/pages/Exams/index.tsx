@@ -3,7 +3,7 @@ import { View,StyleSheet,ScrollView } from 'react-native'
 import { Alert } from '../../components/Alert'
 import { Header } from '../../components/Header'
 import { LastExams } from '../../components/LastExams'
-import { NewExam } from '../../components/NewExam'
+import { ScreenOptions } from '../../components/ScreenOptions'
 import { Client } from '../../components/ShowClient'
 import { AppContext } from '../../hooks/context'
 
@@ -13,12 +13,10 @@ export const Exams = () => {
   return (
     <ScrollView>
     <View style={styles.container}>
-     
       <Header/>
       <Client paciente={paciente}/>
       <Alert Paciente={paciente}/>
-      <NewExam/>
-      <LastExams/>
+      <ScreenOptions/>
       
     </View>
     </ScrollView>

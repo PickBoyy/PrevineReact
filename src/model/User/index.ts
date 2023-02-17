@@ -3,7 +3,8 @@ export interface IUser {
     id:string,
     email:string,
     password:string,
-    accountType:string
+    accountType:string,
+    accountMedical:boolean
 }
 
 export  class User implements IUser {
@@ -12,6 +13,7 @@ export  class User implements IUser {
     email:string;
     password:string;
     accountType:string;
+    accountMedical:boolean;
 
     constructor (
         userName:string,
@@ -19,12 +21,15 @@ export  class User implements IUser {
         email:string,
         password:string,
         accountType:string,
+        accountMedical:boolean
+
     ) {
         this.userName = userName
         this.id = id
         this.email = email
         this.password = password
         this.accountType = accountType
+        this.accountMedical = accountMedical
     }
 
 }

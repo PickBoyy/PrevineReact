@@ -9,9 +9,16 @@ export function ModalHabits() {
   return (
     <View style={styles.container}>
       <HeaderModal title='Hábitos de Vida'/>
-     <View>
-      <Text>Em desenvolvimento...</Text>
+     <View style={styles.placeData}>
+      <Text style={styles.data}>Tabagismo: 40 cigarros/dia</Text>
      </View>
+     <View style={styles.placeData}>
+      <Text style={styles.data}>Sexo: 8x/dia</Text>
+     </View>
+     <View style={styles.placeData}>
+      <Text style={styles.data}>Latada: 20 pedras/dia</Text>
+     </View>
+     
     </View>
   );
 }
@@ -19,7 +26,7 @@ export function ModalHabits() {
 const styles = StyleSheet.create({
     container:{
         backgroundColor:'#E6E6E6',
-        marginTop:-10,
+        marginTop:5,
         marginStart:1,
         marginEnd:0.5,
         paddingEnd:3,
@@ -31,10 +38,13 @@ const styles = StyleSheet.create({
       
     },
     data:{
-      paddingBottom:10,
+      paddingBottom:5,
       paddingStart:15,
       fontWeight:'500',
       fontSize:16
+    },
+    placeData:{
+
     }
    
 })

@@ -4,7 +4,7 @@ import { AppContext } from '../../hooks/context';
 import { HeaderModal } from '../HeaderModal';
 
 
-export function ModalHabits() {
+export function ModalVaccination() {
   const {paciente} = useContext(AppContext)
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ export function ModalHabits() {
 const styles = StyleSheet.create({
     container:{
         backgroundColor:'#E6E6E6',
-        marginTop:-10,
+        marginTop:5,
         marginStart:1,
         marginEnd:0.5,
         paddingEnd:3,

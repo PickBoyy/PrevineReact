@@ -38,7 +38,7 @@ export function ModalMedicines() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#E6E6E6",
-    marginTop: -10,
+    marginTop: 5,
     marginStart: 1,
     marginEnd: 0.5,
     paddingEnd: 3,

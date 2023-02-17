@@ -13,7 +13,7 @@ export function HeaderDrawer() {
            <FontAwesome name="user-circle-o" size={45} color="#696969" />
         </View>
         <View style={styles.infoUser}>
-          <Text style={styles.user}>{paciente.Nome}</Text>
+          <Text style={styles.user}>{user.userName}</Text>
           <Text style={styles.signature}>Tipo de assinatura: <Text style={styles.type}>{user.accountType}</Text></Text>
         </View>
       </View>

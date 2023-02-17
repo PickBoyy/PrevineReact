@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { AppContext } from '../../hooks/context';
 import { IPaciente } from '../../model/Paciente';
 
-type PacienteListProps = {
+type MyProps = {
   onClose: () => void; // função de retorno para fechar a lista de pacientes
+  familia:Array<IPaciente>
 };
 
-const pacientes: IPaciente[] = [ // exemplo de lista de pacientes (substitua pelos seus dados)
-  { Nome: 'Luiz Pereira Nune', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Kleber Rocha Silva', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Raul dos Santos Souza', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-  { Nome: 'Pedro Antunes Magalhães', Idade: 25,CorDaPele:'Negro',creatinina:2,microALB:9,Genero:'Masculino',DRC:'G2A',TFG:3},
-];
 
-export const PacienteList = (props: PacienteListProps) => {
+
+export const PacienteList = (props:MyProps) => {
+ 
+  const {setPaciente} = useContext(AppContext)
+
   const handlePress = (paciente: IPaciente) => {
-    // lógica para selecionar o paciente e fazer o que precisa ser feito
-    props.onClose(); // fecha a lista de pacientes
+    props.onClose(); 
+    setPaciente(paciente)
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Selecione um paciente</Text>
-      {pacientes.map((paciente) => (
-        <TouchableOpacity style={styles.item} onPress={() => handlePress(paciente)} key={paciente.Nome}>
+      {props.familia.map((familiar) => (
+        <TouchableOpacity style={styles.item} onPress={() => handlePress(familiar)} key={familiar.Nome}>
 
           <View style={{ alignItems: 'center', justifyContent: 'center', paddingStart: 45 }}>
-            <Text style={styles.nome}>{paciente.Nome}</Text>
-            <Text style={styles.idade}>{paciente.Idade} anos</Text>
+            <Text style={styles.nome}>{familiar.Nome}</Text>
+            <Text style={styles.idade}>{familiar.Idade} anos</Text>
           </View>
 
         </TouchableOpacity>
@@ -38,15 +37,18 @@ export const PacienteList = (props: PacienteListProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DADADA',
+    backgroundColor: '#E6E6E6',
     borderRadius: 25,
     marginStart: 15,
     marginEnd: 15,
     paddingStart: 15,
     paddingEnd: 15,
-    paddingVertical: 10,
+    paddingTop: 25,
+    paddingBottom: 10,
     shadowColor: 'black',
     elevation: 5,
+    marginTop:-40,
+    
   },
   title: {
     fontSize: 16,
@@ -54,7 +56,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   item: {
-    paddingVertical: 10,
+    backgroundColor: '#DADADA',
+    borderRadius: 10,
+    marginStart: 15,
+    marginEnd: 15,
+    justifyContent: 'center',
+    marginTop:10,
+    // marginBottom:5,
+    paddingStart: 15,
+    paddingEnd: 15,
+    padding: 5,
+    shadowColor: 'black',
+    elevation: 5,
   },
   nome: {
     fontSize: 16,
