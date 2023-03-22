@@ -14,7 +14,7 @@ interface IContextProps {
 export const AppContext:Context<any> = createContext<any>({})
 
 export function AppWrapper({children}:IContextProps) {
-const[user,setUser] = useState<IUser>(Uuser)
+const[user,setUser] = useState<IUser>(Uuser2)
 const[paciente,setPaciente] = useState(Breno)
 const[exames,setExames]  = useState(ExamesIniciais)
 const[medicines,SetMedicines] = useState(IinitMedicines)
