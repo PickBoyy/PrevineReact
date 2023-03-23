@@ -3,9 +3,6 @@ import { AppWrapper } from './src/hooks/context';
 import 'react-native-gesture-handler';
 import Routes from './src/routes';
 import { ClearStorage } from './src/services/AsyncStorage';
-import { register } from 'service-worker';
-
-register();
 
 
 export default function App() {

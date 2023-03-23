@@ -1,0 +1,28 @@
+{
+"expo": {
+    "name": "pwaexpo",
+    "slug": "pwaexpo",
+    "platforms" : [
+        "ios",
+        "android",
+        "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/splash.png",
+    "splash" : {
+        "image": "./assets/splash.png",
+        "resizeMode" : "contain",
+        "backgroundColor" : "#ffffff"
+    },
+    "update" : {
+        "fallbackToCacheTimeout" : 0 
+    },
+    "assetBundlePatterns" : [
+        "**/*"
+    ],
+    "ios" : {
+        "suportsTablet" : true
+    }
+}
+}
